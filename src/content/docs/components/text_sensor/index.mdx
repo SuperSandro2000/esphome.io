@@ -214,7 +214,7 @@ Lets every value through, and sends a value again once no new one has come for t
 
 - **timeout** (**Required**, [Time](/guides/configuration-types/#time)): How long to wait for a new value.
 - **value** (*Optional*, string): The text to send when the time runs out, or `last` to send the last value again.
-  Defaults to `last`.
+  Defaults to `last`. Because `last` is a keyword, the timeout cannot send the literal text "last".
 
 Put `timeout` before `throttle_with_priority` so the last value before a pause still gets through the throttle:
 
