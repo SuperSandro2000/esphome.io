@@ -344,6 +344,30 @@ on_...:
 - **command** (**Required**, int, [templatable](/automations/templates)): The command to send.
 - All other options from [Remote Transmitter Actions](#remote_transmitter-transmit_action).
 
+<span id="remote_transmitter-transmit_cardin_s438"></span>
+
+### `remote_transmitter.transmit_cardin_s438` Action
+
+This [action](/automations/actions#all-actions) sends a Cardin S438 RF code to a remote transmitter. Cardin S438
+remotes open garage doors and gates on 433.92MHz with FSK modulation.
+
+```yaml
+on_...:
+  - remote_transmitter.transmit_cardin_s438:
+      code: "01000111111111"
+      channel: A
+```
+
+#### Configuration Variables
+
+- **code** (**Required**, string, [templatable](/automations/templates)): The 14 DIP switches of the remote as a
+  string of `0` and `1`, for example `"01000111111111"`.
+- **channel** (*Optional*, string, [templatable](/automations/templates)): The button to send. One of `A`, `B`, `C`
+  or `D`. Defaults to `A`.
+- **command_repeats** (*Optional*, int, [templatable](/automations/templates)): How many frames to send for one
+  button press. Range is 1 to 255. Defaults to `3`.
+- All other options from [Remote Transmitter Actions](#remote_transmitter-transmit_action).
+
 <span id="remote_transmitter-transmit_coolix"></span>
 
 ### `remote_transmitter.transmit_coolix` Action
